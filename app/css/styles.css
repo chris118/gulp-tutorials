@@ -1,0 +1,34 @@
+@charset "UTF-8";
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+#root {
+  display: flex;
+  width: 500px;
+  height: 500px;
+  background: #ee3; }
+
+/* comment sass */
+#box, #box2 {
+  flex-grow: 1;
+  background: #1875e7;
+  /* 变量 */
+  border-top-right-radius: 25px;
+  /* 条件语句 */
+  border: 5px solid;
+  /* mixin 重用代码块 指定参数和缺省值 */
+  margin: 25px;
+  /* 嵌套 */
+  /* 属性 注意border后的冒号 */
+  border-color: #c00; }
+  #box h1, #box2 h1 {
+    color: #00ff00; }
+    #box h1:hover, #box2 h1:hover {
+      color: #ffb3ff; }
+
+/* 继承 */
+#box2 {
+  /* 自定义函数 */
+  font-size: 50px; }

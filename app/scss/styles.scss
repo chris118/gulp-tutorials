@@ -1,0 +1,62 @@
+$blue : #1875e7;
+$red: #ccbbee;
+$side : right;
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#root {
+	display: flex;
+	width: 500px;
+	height: 500px;
+	background : #ee3;
+}
+
+ /* comment sass */
+ @mixin self-margion($value: 50px) {
+ 	margin: ($value/2);
+ }
+
+ @function double($n) {
+ 	@return $n * 2;
+ }
+
+#box {
+	flex-grow: 1;
+	background : $blue;
+
+ 	/* 变量 */
+  	border-top-#{$side}-radius: 25px;
+
+	/* 条件语句 */
+  	@if 1 + 1 == 2 { 
+  		border: 5px solid; 
+  	} @else { 
+  		border: 25px solid; 
+  	}
+  	
+  	/* mixin 重用代码块 指定参数和缺省值 */
+  	@include self-margion;
+
+	/* 嵌套 */
+  	h1 {
+  		color: #00ff00;
+  		&:hover { color: #ffb3ff; }
+  	}
+
+  	/* 属性 注意border后的冒号 */
+  	border: {
+  		color: #c00;
+  	}
+}
+
+/* 继承 */
+#box2 {
+	@extend #box;
+
+	/* 自定义函数 */
+	font-size: double(25px);
+}
